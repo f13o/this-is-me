@@ -2,3 +2,7 @@ baseURL = 'https://franciscocasado.cl/'
 languageCode = 'en-us'
 title = 'Francisco Casado'
 theme = 'approachable'
+
+[params]
+linkedin = 'fcasadoc'
+githubRepo = 'FranciscoCasado/this-is-me'

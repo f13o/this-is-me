@@ -1,7 +1,10 @@
 {{ define "main" }}
+  <h2>{{ .Params.job }}</h2>
+  <h3>{{ .Params.brief }}</h3>
   {{ .Content }}
   {{ range site.RegularPages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
   {{ end }}
+
 {{ end }}
