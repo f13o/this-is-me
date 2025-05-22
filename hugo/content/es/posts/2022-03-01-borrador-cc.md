@@ -1,12 +1,12 @@
----
-layout: post
-title: "leelanuevaconstitucion.cl "
-lang: es
-lang-ref: borrador-cc
-summary: "Todos los artículos aprobados por la Convención a 1 solo click"
-thumbnail: "assets/img/borrador-cc-thumb.png"
-date: 2022-03-01
----
++++
+layout = "post"
+title = "leelanuevaconstitucion.cl "
+lang = "es"
+langRef = "borrador-cc"
+summary = "Todos los artículos aprobados por la Convención a 1 solo click"
+thumbnail = "assets/img/borrador-cc-thumb.png"
+date = 2022-03-01
++++
 
 Se empezaron a aprobar artículos en la [Convención Constitucional](https://www.chileconvencion.cl/) y me dió curiosidad **¿cómo se vería la nueva constitución?**
 

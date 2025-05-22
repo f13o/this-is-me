@@ -1,8 +1,8 @@
----
-layout: index
-title: Projects
-sidebar-title: Home
-nav-order: 1
-lang: en
-lang-ref: home
----
++++
+layout = "index"
+title = "Projects"
+sidebarTitle = "Home"
+navOrder = 1
+lang = "en"
+langRef = "home"
++++

@@ -1,12 +1,12 @@
----
-layout: post
-title: Muebles de Emergencia
-date: 2019-04-01
-lang: es
-lang-ref: muebles
-summary: "Amoblar un hogar es caro para alguien que recien egresa"
-thumbnail: "assets/img/muebles_thumb.png"
----
++++
+layout = "post"
+title = "Muebles de Emergencia"
+date = 2019-04-01
+lang = "es"
+langRef = "muebles"
+summary = "Amoblar un hogar es caro para alguien que recien egresa"
+thumbnail = "assets/img/muebles_thumb.png"
++++
 Terminé mi carrera, comencé a trabajar, me independicé y me hallé en un departamento vacío sin donde poner mis (pocas) cosas. Después de una vida viendo a mi papá hacer repisas y uno que otro estante para su casa, creo que siempre quise aprender a *hacer* muebles. Así emprendí el camino por la carpintería.
 
 He hecho la mitad de los muebles que tengo en mi casa. Son ante todo funcionales; las visitas siempre los piropean, pero yo los encuentro feos. Están diseñados según 3 criterios:

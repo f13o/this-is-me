@@ -1,12 +1,12 @@
----
-layout: post
-title: Emergency Furniture
-date: 2019-04-01
-lang: en
-lang-ref: muebles
-summary: "Furnishing a home is very expensive for someone who has just graduated"
-thumbnail: "assets/img/muebles_thumb.png"
----
++++
+layout = "post"
+title = "Emergency Furniture"
+date = 2019-04-01
+lang = "en"
+langRef = "muebles"
+summary = "Furnishing a home is very expensive for someone who has just graduated"
+thumbnail = "assets/img/muebles_thumb.png"
++++
 I finished my major, started working, became financially independent from my parents and found myself in an empty apartment, with no places to store my stuff. After watching my dad making ledges and shelfs my entire life, I think I have always wanted to learn how to *make* furniture. That's how I started the way through woodworking.
 
 I have already done half of the that I have in my place. They are, before everything, functional; every friend that visits my house compliments me, but I really find my creations unamusing. They are design following these 3 criteria:

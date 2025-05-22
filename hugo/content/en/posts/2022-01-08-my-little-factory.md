@@ -1,13 +1,12 @@
----
-layout: post
-title: "My Little Factory "
-lang: en
-lang-ref: my-little-factory
-summary: "A unique environment for learning industrial robotics at the Faculty of Physical
-and Mathematical Sciences"
-thumbnail: "assets/img/mlf.png"
-date: 2021-10-01
----
++++
+layout = "post"
+title = "My Little Factory "
+lang = "en"
+langRef = "my-little-factory"
+summary = "A unique environment for learning industrial robotics at the Faculty of Physical and Mathematical Sciences"
+thumbnail = "assets/img/mlf.png"
+date = 2021-10-01
++++
 
 
 > **Sorry, I haven't traslated this post yet**. If you want to know more about this project, please send me an e-mail :)

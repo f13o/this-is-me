@@ -1,11 +1,11 @@
----
-layout: cv
-title: Curriculum
-sidebar-title: CV
-nav-order: 3
-lang: es
-lang-ref: cv
----
++++
+layout = "cv"
+title = "Curriculum"
+sidebarTitle = "CV"
+navOrder = 3
+lang = "es"
+langRef = "cv"
++++
 
 
 

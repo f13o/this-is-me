@@ -1,12 +1,12 @@
----
-layout: post
-title: "Sh*tty Robots "
-lang: en
-lang-ref: shitty-robots
-summary: "Mediocre robots, but with good intentions"
-thumbnail: "assets/img/shitty_thumb.png"
-date: 2020-08-01
----
++++
+layout = "post"
+title = "Sh*tty Robots "
+lang = "en"
+langRef = "shitty-robots"
+summary = "Mediocre robots, but with good intentions"
+thumbnail = "assets/img/shitty_thumb.png"
+date = 2020-08-01
++++
 
 > **Sorry, I haven't traslated this post yet**. If you want to know more about this project, please send me an e-mail :)
 

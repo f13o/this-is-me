@@ -1,11 +1,11 @@
----
-layout: about
-title: Sobre mí
-sidebar-title: Sobre mí
-nav-order: 2
-lang: es
-lang-ref: about
----
++++
+layout = "about"
+title = "Sobre mí"
+sidebarTitle = "Sobre mí"
+navOrder = 2
+lang = "es"
+langRef = "about"
++++
 
 <div class="about-intro">
     <div class="description">

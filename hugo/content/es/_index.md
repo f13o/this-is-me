@@ -1,8 +1,8 @@
----
-layout: index
-title: Home
-sidebar-title: Portafolio
-nav-order: 1
-lang: es
-lang-ref: home
----
++++
+layout = "index"
+title = "Home"
+sidebarTitle = "Portafolio"
+navOrder = 1
+lang = "es"
+langRef = "home"
++++

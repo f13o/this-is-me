@@ -1,12 +1,12 @@
----
-layout: post
-title: "Sh*tty Robots "
-lang: es
-lang-ref: shitty-robots
-summary: "Robots mediocres, pero con buenas intenciones"
-thumbnail: "assets/img/shitty_thumb.png"
-date: 2020-08-01
----
++++
+layout = "post"
+title = "Sh*tty Robots "
+lang = "es"
+langRef = "shitty-robots"
+summary = "Robots mediocres, pero con buenas intenciones"
+thumbnail = "assets/img/shitty_thumb.png"
+date = 2020-08-01
++++
 
 *Ante la imposibilidad de ir presencialmente a la facultad durante la pandemia, junto a un equipo interdisciplinario de ayudantes creamos un curso, material on-line y kits robótica para que estudiantes de 2do año de la [FCFM](https://ingenieria.uchile.cl/) pudiera aprender desde sus casas, todo en modalidad de clases remotas.*
 

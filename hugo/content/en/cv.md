@@ -1,11 +1,11 @@
----
-layout: cv
-title: Curriculum Vitae
-sidebar-title: CV
-nav-order: 3
-lang: en
-lang-ref: cv
----
++++
+layout = "cv"
+title = "Curriculum Vitae"
+sidebarTitle = "CV"
+navOrder = 3
+lang = "en"
+langRef = "cv"
++++
 
 
 <object data="{{ '/' | relative_url }}assets/docs/cv_francisco_casado.pdf" class="pdf-viewer" type="application/pdf" width="100%" height="100%">
