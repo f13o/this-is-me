@@ -1,0 +1,4 @@
+baseURL = 'https://franciscocasado.cl/'
+languageCode = 'en-us'
+title = 'Francisco Casado'
+theme = 'approachable'
