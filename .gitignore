@@ -1,2 +1,4 @@
 hugo/public/*
 hugo/.hugo_build.lock
+
+**/.claude/settings.local.json
