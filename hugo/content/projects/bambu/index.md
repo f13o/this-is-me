@@ -1,0 +1,15 @@
++++
+layout = "post"
+title = "B.AMBÚ "
+langRef = "b-ambu"
+summary = "Ventilador mecánico de emergencia de la Universidad de Chile"
+thumbnail = "img/bambu_thumb.png"
+date = 2020-05-08
++++
+
+Para hacer frente al ascenso de la pandemia en Chile, diversas instituciones y organizaciones comenzaron a desarrollar sus propias alternativas para afrontar el quiebre de stock de ventiladores mecánicos a nivel mundial. La Universidad de Chile convocó a un equipo de ingeniero, médicos y diseñadores para crear un ventilador mecánico de emergencia que pudiera ser producido sólo con partes disponibles en el mercado local.
+
+El resultado fue **B.AMBÚ**, un diseño de ventilador mecánico invasivo, basado en AMBU, cuyas principales características son: modo volumen-control automático, monitoreo de parámetros respiratorios relevantes (flujo, presión, PEEP, etc.) y un sistema de alertas para cuando los parámetros del paciente o del dispositivo salen de los rangos óptimos, programados por los equipos médicos.
+
+![b.ambu](/img/bambu.png)
+![b.ambu_team](/img/bambu_team.png)

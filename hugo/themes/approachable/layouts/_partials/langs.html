@@ -1,0 +1,11 @@
+{{ $page := .Page}}
+{{ with .AllTranslations }}
+  <ul class="lang-menu">
+    {{ range .}}
+    {{ $isCurrentLang := eq $page.Language .Language }}
+    <li class="lang-menu-item">
+      <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}" class="langs-menu-link {{ if $isCurrentLang  }}currentLang{{ end }}">{{ .Language.LanguageName }}</a>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}
