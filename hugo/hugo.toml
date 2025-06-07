@@ -1,8 +1,27 @@
 baseURL = 'https://franciscocasado.cl/'
-languageCode = 'en-us'
 title = 'Francisco Casado'
 theme = 'approachable'
+
+isMultiLingual = true
+defaultContentLanguage = 'es'
 
 [params]
 linkedin = 'fcasadoc'
 githubRepo = 'FranciscoCasado/this-is-me'
+
+[languages]
+[languages.es]
+languageCode = 'es'
+languageName = 'es'
+weight = 0
+[languages.en]
+languageCode = 'en'
+languageName = 'en'
+weight = 2
+
+
+[markup.goldmark.renderHooks.image]
+enableDefault = true
+
+[markup.goldmark.renderHooks.link]
+enableDefault = true
