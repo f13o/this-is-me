@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const tagStyles: Record<string, string> = {
+  green: "border-green/30 dark:border-green-dark/30 text-green dark:text-green-dark",
+  accent: "border-accent/30 dark:border-accent-dark/30 text-accent dark:text-accent-dark",
+  yellow: "border-yellow/30 dark:border-yellow-dark/30 text-yellow dark:text-yellow-dark",
+  red: "border-red/30 dark:border-red-dark/30 text-red dark:text-red-dark",
+};
+const colorKeys = Object.keys(tagStyles);
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Base title={project.data.title}>
+  <p class="font-mono text-sm mb-6"><a href="/" class="text-zinc-400 dark:text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors">~/</a><a href="/projects/" class="text-accent dark:text-accent-dark hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors">projects</a><span class="text-zinc-400 dark:text-zinc-400">/</span></p>
+  <article class="prose prose-zinc dark:prose-invert prose-headings:font-light prose-headings:font-heading prose-headings:text-zinc-800 dark:prose-headings:text-zinc-200 prose-a:text-accent dark:prose-a:text-accent-dark prose-a:no-underline hover:prose-a:underline prose-img:rounded-md max-w-none">
+    <h1>{project.data.title}</h1>
+    <div class="not-prose flex items-center gap-3 flex-wrap mb-6">
+      <span class="font-mono text-xs text-yellow/60 dark:text-yellow-dark/60">{project.data.date.toISOString().slice(0, 10)}</span>
+      {project.data.tags.map((tag, i) => (
+        <span class={`font-mono text-xs px-1.5 py-0.5 rounded border ${tagStyles[colorKeys[i % colorKeys.length]]}`}>{tag}</span>
+      ))}
+    </div>
+    <Content />
+  </article>
+</Base>

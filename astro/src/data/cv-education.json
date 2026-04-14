@@ -1,0 +1,10 @@
+[
+  {
+    "id": "electrical-engineering",
+    "degree": "Ingeniero Civil Electrico",
+    "institution": "Universidad de Chile",
+    "year": 2018,
+    "thesis": "Un sintetizador de múltiples haces, basado en FPGA, para arreglos de antenas en fase, con aplicaciones en radioastronomía y telecomunicaciones",
+    "thesisLink": "https://repositorio.uchile.cl/handle/2250/151287"
+  }
+]

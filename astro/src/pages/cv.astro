@@ -1,0 +1,162 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import ExperienceEntry from "../components/cv/ExperienceEntry.astro";
+import ExperienceGroup from "../components/cv/ExperienceGroup.astro";
+import EducationEntry from "../components/cv/EducationEntry.astro";
+import PublicationEntry from "../components/cv/PublicationEntry.astro";
+import ThesisEntry from "../components/cv/ThesisEntry.astro";
+import MediaEntry from "../components/cv/MediaEntry.astro";
+import profile from "../data/cv-profile.json";
+
+const allExperience = (await getCollection("cvExperience"))
+  .sort((a, b) => a.data.order - b.data.order);
+
+type Entry = (typeof allExperience)[number];
+const experienceGroups: Entry[][] = [];
+const companyIndex = new Map<string, Entry[]>();
+
+for (const entry of allExperience) {
+  const existing = companyIndex.get(entry.data.company);
+  if (existing) {
+    existing.push(entry);
+  } else {
+    const group = [entry];
+    companyIndex.set(entry.data.company, group);
+    experienceGroups.push(group);
+  }
+}
+
+function groupStartDate(entries: Entry[]): string {
+  return entries.reduce((min, e) => e.data.startDate < min ? e.data.startDate : min, entries[0].data.startDate);
+}
+
+function groupEndDate(entries: Entry[]): string | null {
+  if (entries.some(e => !e.data.endDate)) return null;
+  return entries.reduce((max, e) => e.data.endDate! > max! ? e.data.endDate : max, entries[0].data.endDate);
+}
+const education = await getCollection("cvEducation");
+const publications = (await getCollection("cvPublications"))
+  .sort((a, b) => b.data.year - a.data.year);
+const journals = publications.filter((p) => p.data.type === "journal");
+const conferences = publications.filter((p) => p.data.type === "conference");
+const theses = (await getCollection("cvTheses"))
+  .sort((a, b) => b.data.year - a.data.year);
+const media = (await getCollection("cvMedia"))
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<Base title="CV">
+  <header class="hidden print:block mb-4 border-b border-zinc-300 pb-3">
+    <h1 class="font-heading font-light text-3xl text-zinc-900 mb-1">{profile.name}</h1>
+    <p class="text-sm text-zinc-500 uppercase tracking-widest mb-3">{profile.tagline}</p>
+    <div class="flex flex-wrap gap-x-4 text-xs text-zinc-600">
+      <span>{profile.email}</span>
+      <span>{profile.website}</span>
+      <span>github.com/{profile.github}</span>
+      <span>linkedin.com/in/{profile.linkedin}</span>
+    </div>
+  </header>
+
+  <p class="font-mono text-sm mb-6 print:hidden"><a href="/" class="text-zinc-400 dark:text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors">~/</a><span class="text-accent dark:text-accent-dark">cv</span></p>
+
+  <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 print:hidden">
+Everything I do, I do with technology <i>and</i> people
+  </p>
+
+  <div class="space-y-12">
+    <section>
+      <h2 class="font-heading font-light text-xl text-zinc-800 dark:text-zinc-100 mb-6">Experience</h2>
+      {experienceGroups.map(async (group) => (
+        <ExperienceGroup
+          company={group[0].data.company}
+          startDate={groupStartDate(group)}
+          endDate={groupEndDate(group)}
+        >
+          {group.map(async (entry) => {
+            const { Content } = await render(entry);
+            return (
+              <ExperienceEntry
+                title={entry.data.title}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+              >
+                <Content />
+              </ExperienceEntry>
+            );
+          })}
+        </ExperienceGroup>
+      ))}
+    </section>
+
+    <section>
+      <h2 class="font-heading font-light text-xl text-zinc-800 dark:text-zinc-100 mb-6">Education</h2>
+      {education.map((entry) => (
+        <EducationEntry
+          degree={entry.data.degree}
+          institution={entry.data.institution}
+          year={entry.data.year}
+          thesis={entry.data.thesis}
+          thesisLink={entry.data.thesisLink}
+        />
+      ))}
+    </section>
+
+<section>
+      <h2 class="font-heading font-light text-xl text-zinc-800 dark:text-zinc-100 mb-6">Publications</h2>
+      {journals.length > 0 && (
+        <>
+          <h3 class="font-heading font-light text-sm text-zinc-500 dark:text-zinc-400 mb-3">Journals</h3>
+          {journals.map((p) => (
+            <PublicationEntry
+              title={p.data.title}
+              authors={p.data.authors}
+              venue={p.data.venue}
+              year={p.data.year}
+              link={p.data.link}
+            />
+          ))}
+        </>
+      )}
+      {conferences.length > 0 && (
+        <>
+          <h3 class="font-heading font-light text-sm text-zinc-500 dark:text-zinc-400 mb-3 mt-6">Conferences</h3>
+          {conferences.map((p) => (
+            <PublicationEntry
+              title={p.data.title}
+              authors={p.data.authors}
+              venue={p.data.venue}
+              year={p.data.year}
+              link={p.data.link}
+            />
+          ))}
+        </>
+      )}
+    </section>
+
+    <section>
+      <h2 class="font-heading font-light text-xl text-zinc-800 dark:text-zinc-100 mb-2">Thesis Committee</h2>
+      <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-6">Participated as evaluator in undergraduate thesis defense committees.</p>
+      {theses.map((t) => (
+        <ThesisEntry
+          title={t.data.title}
+          student={t.data.student}
+          year={t.data.year}
+          link={t.data.link}
+        />
+      ))}
+    </section>
+
+    <section class="no-print">
+      <h2 class="font-heading font-light text-xl text-zinc-800 dark:text-zinc-100 mb-6">Interviews</h2>
+      {media.map((m) => (
+        <MediaEntry
+          title={m.data.title}
+          source={m.data.source}
+          year={m.data.year}
+          spotifyEmbedUrl={m.data.spotifyEmbedUrl}
+        />
+      ))}
+    </section>
+  </div>
+</Base>

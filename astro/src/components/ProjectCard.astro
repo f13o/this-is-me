@@ -1,0 +1,40 @@
+---
+const tagStyles: Record<string, string> = {
+  green: "group-hover:border-green/30 dark:group-hover:border-green-dark/30 group-hover:text-green dark:group-hover:text-green-dark",
+  accent: "group-hover:border-accent/30 dark:group-hover:border-accent-dark/30 group-hover:text-accent dark:group-hover:text-accent-dark",
+  yellow: "group-hover:border-yellow/30 dark:group-hover:border-yellow-dark/30 group-hover:text-yellow dark:group-hover:text-yellow-dark",
+  red: "group-hover:border-red/30 dark:group-hover:border-red-dark/30 group-hover:text-red dark:group-hover:text-red-dark",
+};
+const colorKeys = Object.keys(tagStyles);
+
+interface Props {
+  title: string;
+  summary: string;
+  thumbnail: string;
+  href: string;
+  date: Date;
+  tags: string[];
+}
+
+const { title, summary, thumbnail, href, date, tags } = Astro.props;
+---
+
+<a href={href} class="group block border border-zinc-200 dark:border-zinc-800 rounded-md overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+  <img
+    src={`/${thumbnail}`}
+    alt={title}
+    class="w-full h-44 object-cover opacity-90 dark:opacity-80 group-hover:opacity-100 transition-opacity"
+  />
+  <div class="p-4">
+    <h3 class="font-heading text-sm font-light text-zinc-800 dark:text-zinc-100 group-hover:text-green dark:group-hover:text-green-dark transition-colors">{title}</h3>
+    <p class="text-zinc-500 text-sm mt-1">{summary}</p>
+    <div class="mt-3 space-y-2">
+      <span class="font-mono text-xs text-zinc-400 dark:text-zinc-500 group-hover:text-yellow dark:group-hover:text-yellow-dark/60 transition-colors">{date.toISOString().slice(0, 10)}</span>
+      <div class="flex items-center gap-2 flex-wrap">
+        {tags.map((tag, i) => (
+          <span class={`font-mono text-xs px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-800 text-zinc-400 dark:text-zinc-500 transition-colors ${tagStyles[colorKeys[i % colorKeys.length]]}`}>{tag}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</a>

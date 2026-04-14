@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  link?: string;
+}
+
+const { title, authors, venue, year, link } = Astro.props;
+---
+
+<div class="mb-4 last:mb-0">
+  <p class="text-sm text-zinc-800 dark:text-zinc-100">
+    {link ? <a href={link} class="underline underline-offset-2 decoration-zinc-300 dark:decoration-zinc-600 hover:decoration-accent dark:hover:decoration-accent-dark">{title}</a> : title}
+  </p>
+  <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+    {authors.map((a, i) => (
+      <>{i > 0 && ", "}{a === "Francisco Casado" ? <strong>{a}</strong> : a}</>
+    ))}
+  </p>
+  <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5">
+    <em>{venue}</em> <span class="font-mono">{year}</span>
+  </p>
+</div>
