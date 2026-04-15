@@ -1,0 +1,51 @@
+[
+  {
+    "id": "garcia-2022",
+    "title": "Diseño de un sistema inteligente para la detección de plazas de estacionamientos libres",
+    "student": "Carolina Del Carmen Garcia Guerrero",
+    "year": 2022,
+    "link": "https://repositorio.uchile.cl/handle/2250/187054"
+  },
+  {
+    "id": "jimenez-2022",
+    "title": "Desarrollo de producto de optimización para la empresa 1D Solutions en base a algoritmos de inteligencia computacional",
+    "student": "Marcelo Enrique Jimenez Da Fonseca",
+    "year": 2022,
+    "link": "https://repositorio.uchile.cl/handle/2250/185775"
+  },
+  {
+    "id": "cadiz-2022",
+    "title": "Implementación de circuito para medir la eficiencia en la producción de energía en los paneles solares (suciedad, orientación y horarios del día)",
+    "student": "Martin Domingo Cadiz Poblete",
+    "year": 2022,
+    "link": "https://repositorio.uchile.cl/handle/2250/184907"
+  },
+  {
+    "id": "diaz-2021",
+    "title": "Evaluación técnica y económica de la instalación de precipitadores electrostáticos como alternativa de mitigación a la contaminación atmosférica producida por artefactos a leña en la Comuna de Coyhaique",
+    "student": "Josefina Antonia Diaz Henriquez",
+    "year": 2021,
+    "link": "https://repositorio.uchile.cl/handle/2250/181770"
+  },
+  {
+    "id": "dupouy-2021",
+    "title": "Metodologías para la evaluación, caracterización y reutilización de baterías de litio en formato 18650 para aplicaciones de segunda vida",
+    "student": "Felipe Andres Dupouy Cortes",
+    "year": 2021,
+    "link": "https://repositorio.uchile.cl/handle/2250/180038"
+  },
+  {
+    "id": "guajardo-2020",
+    "title": "Diseño e implementación de sistema de control para robot Open Source tipo SCARA",
+    "student": "Felipe German Guajardo Mena",
+    "year": 2020,
+    "link": "https://repositorio.uchile.cl/handle/2250/177346"
+  },
+  {
+    "id": "saavedra-2020",
+    "title": "Implementación de un sistema de detección de residuos reciclables basado en visión computacional",
+    "student": "Matias Sebastian Saavedra Mayorga",
+    "year": 2020,
+    "link": "https://repositorio.uchile.cl/handle/2250/178007"
+  }
+]

@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  startDate: string;
+  endDate: string | null;
+}
+
+const { title, startDate, endDate } = Astro.props;
+
+function formatDate(d: string): string {
+  const [year, month] = d.split("-");
+  return new Date(parseInt(year), parseInt(month) - 1).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+---
+
+<div class="border-l border-zinc-200 dark:border-zinc-800 pl-4">
+  <div class="flex items-baseline justify-between mb-2">
+    <h4 class="font-heading font-light text-sm text-zinc-800 dark:text-zinc-100">{title}</h4>
+    <span class="font-mono text-xs text-zinc-400 dark:text-zinc-500 justify-between">
+      {formatDate(startDate)} &mdash; {endDate ? formatDate(endDate) : "Present"}
+    </span>
+  </div>
+  <div class="text-sm text-zinc-600 dark:text-zinc-300 prose prose-sm prose-zinc dark:prose-invert prose-li:my-0 max-w-none print:max-w-[85%]">
+    <slot />
+  </div>
+</div>
