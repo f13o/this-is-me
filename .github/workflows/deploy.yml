@@ -24,14 +24,11 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          cache-dependency-path: astro/pnpm-lock.yaml
       - run: pnpm install
-        working-directory: astro
       - run: pnpm build
-        working-directory: astro
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: astro/dist
+          path: dist
 
   deploy:
     needs: build
