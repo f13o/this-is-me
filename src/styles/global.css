@@ -17,6 +17,25 @@
   --color-green-dark: #7effa0;
 }
 
+@media screen {
+  main p:not(.font-mono) a,
+  main .prose li a {
+    color: var(--color-accent);
+    text-decoration: none;
+    text-underline-offset: 0.15em;
+  }
+
+  main p:not(.font-mono) a:hover,
+  main .prose li a:hover {
+    text-decoration: underline;
+  }
+
+  html.dark main p:not(.font-mono) a,
+  html.dark main .prose li a {
+    color: var(--color-accent-dark);
+  }
+}
+
 @page { margin: 0.75in 1.25in; }
 
 @media print {
