@@ -1,16 +1,23 @@
 import { defineCollection, z } from "astro:content";
 import { glob, file } from "astro/loaders";
 
+const workSchema = z.object({
+  title: z.string(),
+  langRef: z.string(),
+  summary: z.string(),
+  thumbnail: z.string(),
+  date: z.coerce.date(),
+  tags: z.array(z.string()).default([]),
+});
+
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-  schema: z.object({
-    title: z.string(),
-    langRef: z.string(),
-    summary: z.string(),
-    thumbnail: z.string(),
-    date: z.coerce.date(),
-    tags: z.array(z.string()).default([]),
-  }),
+  schema: workSchema,
+});
+
+const crafts = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/crafts" }),
+  schema: workSchema,
 });
 
 const cvExperience = defineCollection({
@@ -69,6 +76,7 @@ const cvMedia = defineCollection({
 
 export const collections = {
   projects,
+  crafts,
   cvExperience,
   cvPublications,
   cvEducation,
